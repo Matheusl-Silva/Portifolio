@@ -145,15 +145,14 @@ export default function Hero() {
             <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-violet-600 to-cyan-500 p-[2px] animate-glow">
               <div className="rounded-full bg-[#0d0d1a] p-1">
                 <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full overflow-hidden bg-gradient-to-br from-[#1a1a2e] to-[#0d0d1a] flex items-center justify-center animate-float">
-                  {/*
-                    ╔══════════════════════════════════╗
-                    ║  Substitua pela sua foto aqui!   ║
-                    ║  Use: <Image src="/profile.jpg"  ║
-                    ║  width={320} height={320}        ║
-                    ║  alt="Matheus Silva" ... />       ║
-                    ╚══════════════════════════════════╝
-                  */}
-                  <ProfilePlaceholder />
+                  <Image
+                    src="/profile.png"
+                    width={320}
+                    height={320}
+                    alt="Matheus Leandro"
+                    className="w-full h-full object-cover"
+                    priority
+                  />
                 </div>
               </div>
             </div>
