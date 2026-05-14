@@ -137,14 +137,16 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="flex justify-center md:justify-end"
+          className="flex justify-center"
         >
-          <div className="relative">
-            {/* Glow rings */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-violet-500/25 to-cyan-500/20 blur-2xl scale-110" />
-            <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-violet-600 to-cyan-500 p-[2px] animate-glow">
-              <div className="rounded-full bg-[#0d0d1a] p-1">
-                <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full overflow-hidden bg-gradient-to-br from-[#1a1a2e] to-[#0d0d1a] flex items-center justify-center animate-float">
+          <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80">
+            {/* Glow blur */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-violet-500/25 to-cyan-500/20 blur-2xl scale-125 pointer-events-none" />
+
+            {/* Gradient border ring */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-violet-600 to-cyan-500 p-[2px] animate-glow">
+              <div className="w-full h-full rounded-full bg-[#0d0d1a] p-1">
+                <div className="w-full h-full rounded-full overflow-hidden animate-float">
                   <Image
                     src="/profile.png"
                     width={320}
@@ -157,45 +159,34 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Floating badges */}
-            <motion.div
-              animate={{ y: [0, -6, 0] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-3 -right-3 bg-[#11112b] border border-violet-500/30 rounded-xl px-3 py-2 shadow-lg"
-            >
-              <span className="text-xs font-mono font-semibold text-violet-400">
-                PHP
-              </span>
-            </motion.div>
-
-            <motion.div
-              animate={{ y: [0, 6, 0] }}
-              transition={{
-                duration: 3.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.5,
-              }}
-              className="absolute -bottom-3 -left-3 bg-[#11112b] border border-cyan-500/30 rounded-xl px-3 py-2 shadow-lg"
-            >
-              <span className="text-xs font-mono font-semibold text-cyan-400">
-                Oracle
-              </span>
-            </motion.div>
-
+            {/* PHP — topo centro */}
             <motion.div
               animate={{ y: [0, -5, 0] }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 1,
-              }}
-              className="absolute top-1/2 -left-8 bg-[#11112b] border border-emerald-500/30 rounded-xl px-3 py-2 shadow-lg"
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -top-6 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-3 py-2 bg-[#0d0d1a]/95 border border-violet-500/40 rounded-xl shadow-xl backdrop-blur-sm whitespace-nowrap"
             >
-              <span className="text-xs font-mono font-semibold text-emerald-400">
-                Docker
-              </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-violet-400 shrink-0" />
+              <span className="text-xs font-mono font-semibold text-violet-300">PHP</span>
+            </motion.div>
+
+            {/* Oracle — baixo direita */}
+            <motion.div
+              animate={{ y: [0, 5, 0] }}
+              transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+              className="absolute -bottom-6 -right-4 flex items-center gap-1.5 px-3 py-2 bg-[#0d0d1a]/95 border border-cyan-500/40 rounded-xl shadow-xl backdrop-blur-sm whitespace-nowrap"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" />
+              <span className="text-xs font-mono font-semibold text-cyan-300">Oracle</span>
+            </motion.div>
+
+            {/* Docker — baixo esquerda */}
+            <motion.div
+              animate={{ y: [0, 4, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              className="absolute -bottom-6 -left-4 flex items-center gap-1.5 px-3 py-2 bg-[#0d0d1a]/95 border border-emerald-500/40 rounded-xl shadow-xl backdrop-blur-sm whitespace-nowrap"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
+              <span className="text-xs font-mono font-semibold text-emerald-300">Docker</span>
             </motion.div>
           </div>
         </motion.div>
